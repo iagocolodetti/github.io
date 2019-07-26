@@ -13,7 +13,7 @@ export class CriptografiaComponent {
   resultado = '';
 
   constructor(title: Title) {
-    title.setTitle('Criptografia');
+    title.setTitle('iagocolodetti.github.io/Criptografia');
   }
 
   cifrar() {

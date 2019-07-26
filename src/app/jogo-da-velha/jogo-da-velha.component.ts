@@ -32,7 +32,7 @@ export class JogoDaVelhaComponent {
   ];
 
   constructor(title: Title) {
-    title.setTitle('Jogo da Velha');
+    title.setTitle('iagocolodetti.github.io/Jogo da Velha');
   }
 
   iniciar() {

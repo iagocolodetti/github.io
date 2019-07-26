@@ -1,3 +1,4 @@
 # iagocolodetti.github.io
 
-Páginas HTML5 simples utilizando CSS (+Bootstrap 4) e TypeScript (Angular CLI 8).
+Projeto com os arquivos de criação para a página https://iagocolodetti.github.io
+- Angular CLI v8.1.1

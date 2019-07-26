@@ -9,7 +9,7 @@ import { Title } from '@angular/platform-browser';
 export class IndexComponent {
 
   constructor(title: Title) {
-    title.setTitle('index');
+    title.setTitle('iagocolodetti.github.io');
   }
 
 }
