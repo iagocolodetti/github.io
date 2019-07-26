@@ -1,0 +1,30 @@
+span.identificador {
+    font-size: 18px;
+}
+
+.jogo {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    width: 235px;
+    margin-top: 150px;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn-fix-jogo {
+    height: 40px;
+    width: 40px;
+}
+
+.placar {
+    margin-top: -140px;
+}
+
+hr {
+    border-color: black;
+    background-color: black;
+    color: black;
+    width: 230px;
+}

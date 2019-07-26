@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+    background-color: rgb(245, 245, 245);
+}
+
+span.separar {
+    padding: 1.0em;
+}
+
+.btn-fix {
+    width: 90px;
+}
