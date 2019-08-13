@@ -99,7 +99,7 @@ export class CriptografiaComponent {
     return textDecifrado;
   }
 
-  private padLeft(text: string, length: number, c: string) {
+  private padLeft(text: string, length: number, c: string): string {
     let textpad = '';
     for (let i = 0; i < length; i++) {
       textpad = textpad + c;
@@ -107,11 +107,11 @@ export class CriptografiaComponent {
     return textpad.substring(text.length) + text;   
   }
 
-  private isInvalidChar(c: string, min: number, max: number) {
+  private isInvalidChar(c: string, min: number, max: number): boolean {
     return (c.charCodeAt(0) < min || c.charCodeAt(0) > max);
   }
 
-  private invalidCharsInString(text: string, min: number, max: number) {
+  private invalidCharsInString(text: string, min: number, max: number): string {
     let invalidchars = '';
     for (let i = 0; i < text.length; i++) {
       if (this.isInvalidChar(text[i], min, max)) {
@@ -121,7 +121,7 @@ export class CriptografiaComponent {
     return invalidchars;
   }
 
-  private intTryParse(s: string) {
+  private intTryParse(s: string): boolean {
     try {
         let n = parseInt(s);
         parseInt(n.toString(16));
