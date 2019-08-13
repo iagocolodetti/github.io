@@ -89,6 +89,9 @@ export class CifraMatematicaComponent {
       throw 'Não foi possível decifrar, texto cifrado adulterado.';
     }
     let MAX_BLOCK_LENGTH = parseInt(text.charAt(0), 16);
+    if ((text.length - 1) % MAX_BLOCK_LENGTH != 0) {
+      throw 'Não foi possível decifrar, texto cifrado adulterado ou a chave está incorreta.';
+    }
     let valorDaChave = 0;
     for (let i = 0; i < key.length; i++) {
       valorDaChave = valorDaChave + (key.charCodeAt(i) * (key.length - i));
