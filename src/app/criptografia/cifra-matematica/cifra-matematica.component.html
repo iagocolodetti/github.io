@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand py-0">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/criptografia">Voltar</a>
+        </li>
+    </ul>
+</nav>
+<div class="row justify-content-center">
+    <div class="form-group text-center">
+        <h3>Cifra Matemática</h3>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="form-group col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center textarea-wrap">
+        <textarea class="form-control text-center" rows="5" [(ngModel)]="texto" required></textarea>
+        <span class="floating-label text-center">Texto (Cifrado / Decifrado)</span>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="form-group col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center input-wrap">
+        <input type="text" class="form-control text-center" [(ngModel)]="chave" required>
+        <span class="floating-label text-center">Chave</span>
+    </div>
+</div>
+<div class="form-inline justify-content-center">
+    <div class="form-group text-center">
+        <button (click)="cifrar()" class="btn btn-primary btn-fix" [disabled]="texto.length == 0 || chave.length < 1 || chave.length > 8">Cifrar</button>
+        <span class="separar"></span>
+        <button (click)="decifrar()" class="btn btn-primary btn-fix" [disabled]="texto.length == 0 || chave.length < 1 || chave.length > 8">Decifrar</button>
+    </div>
+</div>
+<br>
+<div class="row justify-content-center">
+    <div class="form-group col-xs-12 col-sm-12 col-md-8 col-lg-8 text-center">
+        <label for="resultado">Resultado</label>
+        <textarea class="form-control text-center" style="color: slategrey" rows="5" [(ngModel)]="resultado" id="resultado" name="resultado" readonly></textarea>
+    </div>
+</div>

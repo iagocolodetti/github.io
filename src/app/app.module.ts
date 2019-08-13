@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
 import { CriptografiaComponent } from './criptografia/criptografia.component';
 import { JogoDaVelhaComponent } from './jogo-da-velha/jogo-da-velha.component';
+import { CifraMatematicaComponent } from './criptografia/cifra-matematica/cifra-matematica.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
     CriptografiaComponent,
-    JogoDaVelhaComponent
+    JogoDaVelhaComponent,
+    CifraMatematicaComponent
   ],
   imports: [
     BrowserModule,
