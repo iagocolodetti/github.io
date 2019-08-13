@@ -35,9 +35,9 @@ export class CifraDeCesarComponent {
     if(this.texto.length > 0 && this.deslocamento.length > 0) {
       if (Util.intTryParse(this.deslocamento)) {
         try {
-            this.resultado = this._decifrar(this.texto, parseInt(this.deslocamento), 12, 255);
+          this.resultado = this._decifrar(this.texto, parseInt(this.deslocamento), 12, 255);
         } catch (erro) {
-            this.resultado = erro;
+          this.resultado = erro;
         }
       } else {
         this.resultado = 'O deslocamento deve ser um número inteiro.';

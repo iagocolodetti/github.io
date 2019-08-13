@@ -30,9 +30,9 @@ export class CifraMatematicaComponent {
   decifrar() {
     if(this.texto.length > 0 && this.chave.length > 0) {
       try {
-          this.resultado = this._decifrar(this.texto, this.chave);
+        this.resultado = this._decifrar(this.texto, this.chave);
       } catch (erro) {
-          this.resultado = erro;
+        this.resultado = erro;
       }
     }
   }
