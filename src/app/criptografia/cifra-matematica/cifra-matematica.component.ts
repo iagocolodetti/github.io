@@ -85,10 +85,10 @@ export class CifraMatematicaComponent {
     if (invalidchars != '') {
       throw 'Existe(m) caractere(s) inválido(s) na chave.\nCaracteres inválidos: ' + invalidchars;
     }
-    if (!Util.intTryParse(text)) {
+    if (!Util.intTryParse(text.charAt(0))) {
       throw 'Não foi possível decifrar, texto cifrado adulterado.';
     }
-    let MAX_BLOCK_LENGTH = parseInt(text[0], 16);
+    let MAX_BLOCK_LENGTH = parseInt(text.charAt(0), 16);
     let valorDaChave = 0;
     for (let i = 0; i < key.length; i++) {
       valorDaChave = valorDaChave + (key.charCodeAt(i) * (key.length - i));

@@ -24,9 +24,7 @@ export class Util {
 
     public static intTryParse(s: string): boolean {
         try {
-            let n = parseInt(s);
-            parseInt(n.toString(16));
-            return true;
+            return !isNaN(parseInt(s));
         } catch (NumberFormatException) {
             return false;
         }

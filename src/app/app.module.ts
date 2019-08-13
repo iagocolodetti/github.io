@@ -7,6 +7,7 @@ import { IndexComponent } from './index/index.component';
 import { CriptografiaComponent } from './criptografia/criptografia.component';
 import { JogoDaVelhaComponent } from './jogo-da-velha/jogo-da-velha.component';
 import { CifraMatematicaComponent } from './criptografia/cifra-matematica/cifra-matematica.component';
+import { CifraDeCesarComponent } from './criptografia/cifra-de-cesar/cifra-de-cesar.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CifraMatematicaComponent } from './criptografia/cifra-matematica/cifra-
     IndexComponent,
     CriptografiaComponent,
     JogoDaVelhaComponent,
-    CifraMatematicaComponent
+    CifraMatematicaComponent,
+    CifraDeCesarComponent
   ],
   imports: [
     BrowserModule,
