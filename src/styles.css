@@ -7,5 +7,9 @@ span.separar {
 }
 
 .btn-fix {
-    width: 90px;
+    width: 150px;
+}
+
+.btn-default-width {
+    width: 180px;
 }

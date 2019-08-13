@@ -9,6 +9,7 @@ import { JogoDaVelhaComponent } from './jogo-da-velha/jogo-da-velha.component';
 import { CifraMatematicaComponent } from './criptografia/cifra-matematica/cifra-matematica.component';
 import { CifraDeCesarComponent } from './criptografia/cifra-de-cesar/cifra-de-cesar.component';
 import { CifraRailFenceComponent } from './criptografia/cifra-rail-fence/cifra-rail-fence.component';
+import { CifraXorComponent } from './criptografia/cifra-xor/cifra-xor.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CifraRailFenceComponent } from './criptografia/cifra-rail-fence/cifra-r
     JogoDaVelhaComponent,
     CifraMatematicaComponent,
     CifraDeCesarComponent,
-    CifraRailFenceComponent
+    CifraRailFenceComponent,
+    CifraXorComponent
   ],
   imports: [
     BrowserModule,

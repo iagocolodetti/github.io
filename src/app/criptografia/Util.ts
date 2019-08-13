@@ -8,6 +8,15 @@ export class Util {
         return textpad.substring(text.length) + text;   
     }
 
+    public static isBinaryString(text: string): boolean {
+        for (let i = 0; i < text.length; i++) {
+            if (text.charAt(i) != '0' && text.charAt(i) != '1') {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static isInvalidChar(c: string, min: number, max: number): boolean {
         return (c.charCodeAt(0) < min || c.charCodeAt(0) > max);
     }
@@ -29,4 +38,5 @@ export class Util {
             return false;
         }
     }
+
 }
