@@ -10,9 +10,9 @@ import { JogoDaVelhaComponent } from './jogo-da-velha/jogo-da-velha.component';
 const routes: Routes = [
   {path: '', component: IndexComponent},
   {path: 'criptografia', component: CriptografiaComponent},
-  {path: 'cifradecesar', component: CifraDeCesarComponent},
-  {path: 'cifrarailfence', component: CifraRailFenceComponent},
-  {path: 'ciframatematica', component: CifraMatematicaComponent},
+  {path: 'criptografia/cifradecesar', component: CifraDeCesarComponent},
+  {path: 'criptografia/cifrarailfence', component: CifraRailFenceComponent},
+  {path: 'criptografia/ciframatematica', component: CifraMatematicaComponent},
   {path: 'jogodavelha', component: JogoDaVelhaComponent}
 ];
 
