@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand py-0">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Versões
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="https://github.com/iagocolodetti/Analise_Combinatoria">C# Desktop</a>
+                    <a class="dropdown-item" href="https://github.com/iagocolodetti/Analise_Combinatoria_Android">Java Android</a>
+                    <a class="dropdown-item" href="https://github.com/iagocolodetti/Analise_Combinatoria_WEB">Java WEB</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/">Voltar</a>
+            </li>
+        </ul>
+    </nav>
+<div class="row justify-content-center">
+    <div class="form-group text-center">
+        <h3>{{title}}</h3>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="form-group col-xs-10 col-sm-7 col-md-5 col-lg-5 text-center">
+        <label class="info">{{info}}</label>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="form-group dropdown text-center">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Selecionar Tipo</button>
+        <div class="dropdown-menu text-center">
+            <button class="dropdown-item" style="cursor: pointer;" *ngFor="let t of tipos; let i = index" (click)="selecionarTipo(i)">{{tipos[i].tipo}}</button>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="form-group col-xs-10 col-sm-7 col-md-5 col-lg-5 text-center">
+        <h5>{{tipos[tipoSelecionado].tipo}}</h5>
+        <img src="{{tipos[tipoSelecionado].formula}}"/>
+        <label class="info">{{tipos[tipoSelecionado].info}}</label>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="form-group col-xs-10 col-sm-7 col-md-5 col-lg-5 text-center">
+        <label for="p">P:</label>
+        <input type="text" class="form-control text-center" [(ngModel)]="p" id="p" name="p" placeholder="{{placeholderP}}" value="{{p}}" [disabled]="tipoSelecionado == 0">
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="form-group col-xs-10 col-sm-7 col-md-5 col-lg-5 text-center">
+        <label for="n">N:</label>
+        <input type="text" class="form-control text-center" [(ngModel)]="n" id="n" name="n" placeholder="Digite o valor de N" value="{{n}}">
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="form-group text-center">
+        <button class="btn btn-primary btn-fix" (click)="calcular()">Calcular</button>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="form-group col-xs-10 col-sm-7 col-md-5 col-lg-5 text-center">
+        <h6 style="word-wrap:break-word;">{{resultado}}</h6>
+    </div>
+</div>

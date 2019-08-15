@@ -10,6 +10,7 @@ import { CifraMatematicaComponent } from './criptografia/cifra-matematica/cifra-
 import { CifraDeCesarComponent } from './criptografia/cifra-de-cesar/cifra-de-cesar.component';
 import { CifraRailFenceComponent } from './criptografia/cifra-rail-fence/cifra-rail-fence.component';
 import { CifraXorComponent } from './criptografia/cifra-xor/cifra-xor.component';
+import { AnaliseCombinatoriaComponent } from './analise-combinatoria/analise-combinatoria.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CifraXorComponent } from './criptografia/cifra-xor/cifra-xor.component'
     CifraMatematicaComponent,
     CifraDeCesarComponent,
     CifraRailFenceComponent,
-    CifraXorComponent
+    CifraXorComponent,
+    AnaliseCombinatoriaComponent
   ],
   imports: [
     BrowserModule,

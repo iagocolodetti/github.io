@@ -25,7 +25,7 @@ export class Util {
         let invalidchars = '';
         for (let i = 0; i < text.length; i++) {
             if (this.isInvalidChar(text[i], min, max)) {
-            invalidchars = invalidchars + text[i] + ' (' + text.charCodeAt(i) + ')   ';
+                invalidchars = invalidchars + text[i] + ' (' + text.charCodeAt(i) + ')   ';
             }
         }
         return invalidchars;
