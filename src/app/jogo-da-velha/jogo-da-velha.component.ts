@@ -10,6 +10,8 @@ import { Vencedor } from './Vencedor';
 })
 export class JogoDaVelhaComponent {
 
+  title = 'Jogo da Velha';
+
   iniciado = false;
   jogadas = 0;
   vez = '--';
@@ -32,7 +34,7 @@ export class JogoDaVelhaComponent {
   ];
 
   constructor(title: Title) {
-    title.setTitle('iagocolodetti.github.io/JogoDaVelha');
+    title.setTitle(this.title);
   }
 
   iniciar() {

@@ -9,12 +9,14 @@ import { Util } from '../Util';
 })
 export class CifraMatematicaComponent {
 
+  title = 'Cifra Matemática';
+
   texto = '';
   chave = '';
   resultado = '';
 
   constructor(title: Title) {
-    title.setTitle('iagocolodetti.github.io/Criptografia/CifraMatematica');
+    title.setTitle(this.title);
   }
 
   cifrar() {

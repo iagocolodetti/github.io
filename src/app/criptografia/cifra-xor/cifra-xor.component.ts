@@ -9,12 +9,14 @@ import { Util } from '../Util';
 })
 export class CifraXorComponent {
 
+  title = 'Cifra XOR';
+
   texto = '';
   chave = '';
   resultado = '';
 
   constructor(title: Title) {
-    title.setTitle('iagocolodetti.github.io/Criptografia/CifraXOR');
+    title.setTitle(this.title);
   }
 
   cifrar() {

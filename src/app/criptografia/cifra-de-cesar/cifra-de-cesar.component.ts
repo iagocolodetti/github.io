@@ -9,12 +9,14 @@ import { Util } from '../Util';
 })
 export class CifraDeCesarComponent {
 
+  title = 'Cifra de César';
+
   texto = '';
   deslocamento = '';
   resultado = '';
 
   constructor(title: Title) {
-    title.setTitle('iagocolodetti.github.io/Criptografia/CifraDeCesar');
+    title.setTitle(this.title);
   }
 
   cifrar() {

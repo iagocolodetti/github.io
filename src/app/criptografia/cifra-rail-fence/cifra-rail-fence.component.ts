@@ -8,11 +8,13 @@ import { Title } from '@angular/platform-browser';
 })
 export class CifraRailFenceComponent {
 
+  title = 'Cifra Rail Fence'
+
   texto = '';
   resultado = '';
 
   constructor(title: Title) {
-    title.setTitle('iagocolodetti.github.io/Criptografia/CifraRailFence');
+    title.setTitle(this.title);
   }
 
   cifrar() {

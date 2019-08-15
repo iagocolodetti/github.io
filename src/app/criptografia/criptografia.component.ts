@@ -9,7 +9,7 @@ import { Title } from '@angular/platform-browser';
 export class CriptografiaComponent {
 
   constructor(title: Title) {
-    title.setTitle('iagocolodetti.github.io/Criptografia');
+    title.setTitle('Criptografia');
   }
   
 }
