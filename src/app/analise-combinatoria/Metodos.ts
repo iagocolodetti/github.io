@@ -149,10 +149,10 @@ export class Metodos {
         }
         switch (tipo) {
             case 0:
-                resultado = `P(n) > P(${n}) = ${this.permutacaoSimples(_n)}`;
+                resultado = `P(n) > P(${_n}) = ${this.permutacaoSimples(_n)}`;
                 break;
             case 1:
-                let exibir = `P(n,(p,p,...)) > P(${n},(`;
+                let exibir = `P(n,(p,p,...)) > P(${_n},(`;
                 let sPP = p.replace(' ', '').split(',');
                 let pp = new Array<number>();
                 for (let i = 0; i < sPP.length; i++) {
@@ -165,9 +165,9 @@ export class Metodos {
                         throw `Os valores do campo 'p,p,...' devem ser números inteiros positivos de ${MIN_NUMBER} a ${MAX_NUMBER}.`;
                     }
                     if (i == 0) {
-                        exibir += sPP[i];
+                        exibir += _p;
                     } else {
-                        exibir += `,` + sPP[i];
+                        exibir += `,` + _p;
                     }
                     pp[i] = _p;
                 }
@@ -181,16 +181,16 @@ export class Metodos {
                 resultado = `${exibir})) = ${this.permutacaoRepeticao(_n, pp)}`;
                 break;
             case 2:
-                resultado = `A(n,p) > A(${n},${p}) = ${this.arranjoSimples(_n, _p)}`;
+                resultado = `A(n,p) > A(${_n},${_p}) = ${this.arranjoSimples(_n, _p)}`;
                 break;
             case 3:
-                resultado = `AR(n,p) > AR(${n},${p}) = ${this.arranjoRepeticao(_n, _p)}`;
+                resultado = `AR(n,p) > AR(${_n},${_p}) = ${this.arranjoRepeticao(_n, _p)}`;
                 break;
             case 4:
-                resultado = `C(n,p) > C(${n},${p}) = ${this.combinacaoSimples(_n, _p)}`;
+                resultado = `C(n,p) > C(${_n},${_p}) = ${this.combinacaoSimples(_n, _p)}`;
                 break;
             case 5:
-                resultado = `CR(n,p) > CR(${n},${p}) = ${this.combinacaoRepeticao(_n, _p)}`;
+                resultado = `CR(n,p) > CR(${_n},${_p}) = ${this.combinacaoRepeticao(_n, _p)}`;
                 break;
             default:
                 resultado = 'Tipo incorreto.';
