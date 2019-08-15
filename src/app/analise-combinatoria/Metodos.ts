@@ -154,7 +154,7 @@ export class Metodos {
             case 1:
                 let exibir = `P(n,(p,p,...)) > P(${n},(`;
                 let sPP = p.replace(' ', '').split(',');
-                let pp: Array<number>;
+                let pp = new Array<number>();
                 for (let i = 0; i < sPP.length; i++) {
                     if (!this.intTryParse(sPP[i])) {
                         throw 'Um valor do campo \'p,p,...\' não é um inteiro.';
