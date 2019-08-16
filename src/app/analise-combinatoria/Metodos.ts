@@ -1,11 +1,7 @@
 export class Metodos {
 
-    private intTryParse(s: string): boolean {
-        try {
-            return !isNaN(parseInt(s));
-        } catch (NumberFormatException) {
-            return false;
-        }
+    private isPositiveInteger(s: string): boolean {
+        return (/^\+?\d+$/).test(s);
     }
 
     private fatorial(n: number): bigint {
@@ -94,8 +90,8 @@ export class Metodos {
                 if (n == '') {
                     throw 'O campo \'n\' está vazio.';
                 }
-                if (!this.intTryParse(n)) {
-                    throw 'O valor do campo \'n\' não é um inteiro.';
+                if (!this.isPositiveInteger(n)) {
+                    throw 'O valor do campo \'n\' não é um inteiro positivo.';
                 } else {
                     _n = parseInt(n);
                 }
@@ -110,8 +106,8 @@ export class Metodos {
                 if (p == '') {
                     throw 'O campo \'p\' está vazio.';
                 }
-                if (!this.intTryParse(n)) {
-                    throw 'O valor do campo \'n\' não é um inteiro.';
+                if (!this.isPositiveInteger(n)) {
+                    throw 'O valor do campo \'n\' não é um inteiro positivo.';
                 } else {
                     _n = parseInt(n);
                 }
@@ -126,16 +122,16 @@ export class Metodos {
                 if (p == '') {
                     throw 'O campo \'p\' está vazio.';
                 }
-                if (!this.intTryParse(n)) {
-                    throw 'O valor do campo \'n\' não é um inteiro.';
+                if (!this.isPositiveInteger(n)) {
+                    throw 'O valor do campo \'n\' não é um inteiro positivo.';
                 } else {
                     _n = parseInt(n);
                 }
                 if (_n < MIN_NUMBER || _n > MAX_NUMBER) {
                     throw `O valor do campo \'n\' deve ser um número inteiro positivo de ${MIN_NUMBER} a ${MAX_NUMBER}.`;
                 }
-                if (!this.intTryParse(p)) {
-                    throw 'O valor do campo \'p\' não é um inteiro.';
+                if (!this.isPositiveInteger(p)) {
+                    throw 'O valor do campo \'p\' não é um inteiro positivo.';
                 } else {
                     _p = parseInt(p);
                 }
@@ -156,8 +152,8 @@ export class Metodos {
                 let sPP = p.replace(' ', '').split(',');
                 let pp = new Array<number>();
                 for (let i = 0; i < sPP.length; i++) {
-                    if (!this.intTryParse(sPP[i])) {
-                        throw 'Um valor do campo \'p,p,...\' não é um inteiro.';
+                    if (!this.isPositiveInteger(sPP[i])) {
+                        throw 'Um valor do campo \'p,p,...\' não é um inteiro positivo.';
                     } else {
                         _p = parseInt(sPP[i]);
                     }

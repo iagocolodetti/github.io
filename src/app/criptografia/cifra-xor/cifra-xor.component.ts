@@ -9,6 +9,8 @@ import { Util } from '../Util';
 })
 export class CifraXorComponent {
 
+  util = new Util();
+
   title = 'Cifra XOR';
 
   texto = '';
@@ -36,20 +38,20 @@ export class CifraXorComponent {
     if (key == '') {
       throw 'Digite uma chave (em binário).';
     }
-    if (!Util.isBinaryString(key)) {
+    if (!this.util.isBinaryString(key)) {
       throw 'A chave deve ser em binário (0 ou 1).';
     }
     if (key.length > 8) {
       throw 'A chave deve ter no máximo 8 dígitos.';
     }
-    let invalidchars = Util.invalidCharsInString(text, 0, 255);
+    let invalidchars = this.util.invalidCharsInString(text, 0, 255);
     if (invalidchars != '') {
       throw 'Existe(m) caractere(s) inválido(s) no(a) texto/palavra.\nCaracteres inválidos: ' + invalidchars;
     }
     let textCifrado = '';
-    key = Util.padLeft(key, 8, '0');
+    key = this.util.padLeft(key, 8, '0');
     for (let i = 0; i < text.length; i++) {
-      let charBinary = Util.padLeft(text.charCodeAt(i).toString(2), 8, '0');
+      let charBinary = this.util.padLeft(text.charCodeAt(i).toString(2), 8, '0');
       let charCifrado = '';
       for (let j = 0; j < 8; j++) {
         if (charBinary.charAt(j) === key.charAt(j)) {

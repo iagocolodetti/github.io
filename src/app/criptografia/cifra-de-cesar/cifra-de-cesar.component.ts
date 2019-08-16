@@ -9,6 +9,8 @@ import { Util } from '../Util';
 })
 export class CifraDeCesarComponent {
 
+  util = new Util();
+
   title = 'Cifra de César';
 
   texto = '';
@@ -21,28 +23,28 @@ export class CifraDeCesarComponent {
 
   cifrar() {
     if(this.texto.length > 0 && this.deslocamento.length > 0) {
-      if (Util.intTryParse(this.deslocamento)) {
+      if (this.util.isPositiveInteger(this.deslocamento)) {
         try {
           this.resultado = this._cifrar(this.texto, parseInt(this.deslocamento), 12, 255);
         } catch (erro) {
           this.resultado = erro;
         }
       } else {
-        this.resultado = 'O deslocamento deve ser um número inteiro.';
+        this.resultado = 'O deslocamento deve ser um número inteiro positivo.';
       }
     }
   }
 
   decifrar() {
     if(this.texto.length > 0 && this.deslocamento.length > 0) {
-      if (Util.intTryParse(this.deslocamento)) {
+      if (this.util.isPositiveInteger(this.deslocamento)) {
         try {
           this.resultado = this._decifrar(this.texto, parseInt(this.deslocamento), 12, 255);
         } catch (erro) {
           this.resultado = erro;
         }
       } else {
-        this.resultado = 'O deslocamento deve ser um número inteiro.';
+        this.resultado = 'O deslocamento deve ser um número inteiro positivo.';
       }
     }
   }
@@ -55,7 +57,7 @@ export class CifraDeCesarComponent {
     if (deslocamento < 0 || deslocamento > MAX_DESLOCAMENTO) {
       throw 'O deslocamento não pode ser menor que 0 e não pode ser maior que ' + MAX_DESLOCAMENTO + '.';
     }
-    let invalidchars = Util.invalidCharsInString(text, min, max);
+    let invalidchars = this.util.invalidCharsInString(text, min, max);
     if (invalidchars != '') {
       throw 'Existe(m) caractere(s) inválido(s) no(a) texto/palavra.\nCaracteres inválidos: ' + invalidchars;
     }
@@ -79,7 +81,7 @@ export class CifraDeCesarComponent {
     if (deslocamento < 0 || deslocamento > MAX_DESLOCAMENTO) {
       throw 'O deslocamento não pode ser menor que 0 e não pode ser maior que ' + MAX_DESLOCAMENTO;
     }
-    let invalidchars = Util.invalidCharsInString(text, min, max);
+    let invalidchars = this.util.invalidCharsInString(text, min, max);
     if (invalidchars != '') {
       throw 'Existe(m) caractere(s) inválido(s) no(a) texto/palavra.\nCaracteres inválidos: ' + invalidchars;
     }

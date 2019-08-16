@@ -84,4 +84,12 @@ export class AnaliseCombinatoriaComponent {
     }
   }
 
+  desativarCalcular() {
+    if (this.tipoSelecionado == 0) {
+      return this.n.length == 0;
+    } else {
+      return (this.p.length == 0 || this.n.length == 0);
+    }
+  }
+
 }

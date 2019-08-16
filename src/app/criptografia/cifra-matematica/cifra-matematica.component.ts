@@ -9,6 +9,8 @@ import { Util } from '../Util';
 })
 export class CifraMatematicaComponent {
 
+  util = new Util();
+
   title = 'Cifra Matemática';
 
   texto = '';
@@ -49,11 +51,11 @@ export class CifraMatematicaComponent {
     if (key.length > 8) {
       throw 'A chave deve ter no máximo 8 dígitos.';
     }
-    let invalidchars = Util.invalidCharsInString(text, 32, 255);
+    let invalidchars = this.util.invalidCharsInString(text, 32, 255);
     if (invalidchars != '') {
       throw 'Existe(m) caractere(s) inválido(s) no(a) texto/palavra.\nCaracteres inválidos: ' + invalidchars;
     }
-    invalidchars = Util.invalidCharsInString(key, 33, 255);
+    invalidchars = this.util.invalidCharsInString(key, 33, 255);
     if (invalidchars != '') {
       throw 'Existe(m) caractere(s) inválido(s) na chave.\nCaracteres inválidos: ' + invalidchars;
     }
@@ -64,7 +66,7 @@ export class CifraMatematicaComponent {
     let MAX_BLOCK_LENGTH = (255 + valorDaChave).toString(16).length;
     let textCifrado = String(MAX_BLOCK_LENGTH);
     for (let i = 0; i < text.length; i++) {
-      textCifrado = textCifrado + Util.padLeft((text.charCodeAt(i) + valorDaChave).toString(16), MAX_BLOCK_LENGTH, '0');
+      textCifrado = textCifrado + this.util.padLeft((text.charCodeAt(i) + valorDaChave).toString(16), MAX_BLOCK_LENGTH, '0');
     }
     return textCifrado.toUpperCase();
   }
@@ -79,15 +81,15 @@ export class CifraMatematicaComponent {
     if (key.length > 8) {
       throw 'A chave deve ter no máximo 8 dígitos.';
     }
-    let invalidchars = Util.invalidCharsInString(text, 32, 255);
+    let invalidchars = this.util.invalidCharsInString(text, 32, 255);
     if (invalidchars != '') {
       throw 'Existe(m) caractere(s) inválido(s) no(a) texto/palavra.\nCaracteres inválidos: ' + invalidchars;
     }
-    invalidchars = Util.invalidCharsInString(key, 33, 255);
+    invalidchars = this.util.invalidCharsInString(key, 33, 255);
     if (invalidchars != '') {
       throw 'Existe(m) caractere(s) inválido(s) na chave.\nCaracteres inválidos: ' + invalidchars;
     }
-    if (!Util.intTryParse(text.charAt(0))) {
+    if (!this.util.isPositiveInteger(text.charAt(0))) {
       throw 'Não foi possível decifrar, texto cifrado adulterado.';
     }
     let MAX_BLOCK_LENGTH = parseInt(text.charAt(0), 16);

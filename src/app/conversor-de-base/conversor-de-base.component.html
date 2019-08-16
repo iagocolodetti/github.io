@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand py-0">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Versões
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="https://github.com/iagocolodetti/Conversor_de_Base">C# Desktop</a>
+                <a class="dropdown-item" href="https://github.com/iagocolodetti/Conversor_de_Base_Android">Java Android</a>
+                <a class="dropdown-item" href="https://github.com/iagocolodetti/Conversor_de_Base_WEB">Java WEB</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/">Voltar</a>
+        </li>
+    </ul>
+</nav>
+<div class="row justify-content-center">
+    <div class="form-group text-center">
+        <h3>{{title}}</h3>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="form-group col-xs-10 col-sm-7 col-md-5 col-lg-5 text-center">
+        <label for="algarismo">Algarismo:</label>
+        <input type="text" class="form-control text-center" [(ngModel)]="algarismo" id="algarismo" name="algarismo" placeholder="Digite o algarismo">
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="form-group col-xs-10 col-sm-7 col-md-5 col-lg-5 text-center">
+        <label for="daBase">Base:</label>
+        <input type="number" min="2" max="32" class="form-control text-center" [(ngModel)]="daBase" id="daBase" name="daBase" placeholder="Digite a base do algarismo">
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="form-group col-xs-10 col-sm-7 col-md-5 col-lg-5 text-center">
+        <label for="paraBase">Para base:</label>
+        <input type="number" min="2" max="32" class="form-control text-center" [(ngModel)]="paraBase" id="paraBase" name="paraBase" placeholder="Digite para qual base será convertido">
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="form-group text-center">
+        <button class="btn btn-primary btn-fix" (click)="calcular()" [disabled]="desativarCalcular()">Converter</button>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="form-group col-xs-10 col-sm-7 col-md-5 col-lg-5 text-center">
+        <label for="resultado">Resultado</label>
+        <textarea class="form-control text-center" rows="5" [(ngModel)]="resultado" id="resultado" name="resultado" readonly></textarea>
+    </div>
+</div>

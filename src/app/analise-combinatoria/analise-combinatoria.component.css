@@ -3,3 +3,7 @@ label.info {
     font-style: italic;
     color: navy;
 }
+
+textarea {
+    resize: vertical;
+}

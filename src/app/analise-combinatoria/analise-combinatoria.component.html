@@ -1,20 +1,20 @@
 <nav class="navbar navbar-expand py-0">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Versões
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="https://github.com/iagocolodetti/Analise_Combinatoria">C# Desktop</a>
-                    <a class="dropdown-item" href="https://github.com/iagocolodetti/Analise_Combinatoria_Android">Java Android</a>
-                    <a class="dropdown-item" href="https://github.com/iagocolodetti/Analise_Combinatoria_WEB">Java WEB</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/">Voltar</a>
-            </li>
-        </ul>
-    </nav>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Versões
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="https://github.com/iagocolodetti/Analise_Combinatoria">C# Desktop</a>
+                <a class="dropdown-item" href="https://github.com/iagocolodetti/Analise_Combinatoria_Android">Java Android</a>
+                <a class="dropdown-item" href="https://github.com/iagocolodetti/Analise_Combinatoria_WEB">Java WEB</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/">Voltar</a>
+        </li>
+    </ul>
+</nav>
 <div class="row justify-content-center">
     <div class="form-group text-center">
         <h3>{{title}}</h3>
@@ -54,11 +54,12 @@
 </div>
 <div class="row justify-content-center">
     <div class="form-group text-center">
-        <button class="btn btn-primary btn-fix" (click)="calcular()">Calcular</button>
+        <button class="btn btn-primary btn-fix" (click)="calcular()" [disabled]="desativarCalcular()">Calcular</button>
     </div>
 </div>
 <div class="row justify-content-center">
     <div class="form-group col-xs-10 col-sm-7 col-md-5 col-lg-5 text-center">
-        <h6 style="word-wrap:break-word;">{{resultado}}</h6>
+        <label for="resultado">Resultado</label>
+        <textarea class="form-control text-center" rows="5" [(ngModel)]="resultado" id="resultado" name="resultado" readonly></textarea>
     </div>
 </div>
