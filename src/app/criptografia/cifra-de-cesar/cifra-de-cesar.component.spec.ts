@@ -1,6 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
 import { CifraDeCesarComponent } from './cifra-de-cesar.component';
+import { Metodos } from './Metodos';
+
+const metodos = new Metodos();
+
+const TEXTO = 'teste';
+const DESLOCAMENTO = 15;
 
 describe('CifraDeCesarComponent', () => {
   let component: CifraDeCesarComponent;
@@ -8,7 +14,8 @@ describe('CifraDeCesarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CifraDeCesarComponent ]
+      declarations: [ CifraDeCesarComponent ],
+      imports: [ FormsModule ]
     })
     .compileComponents();
   }));
@@ -19,7 +26,14 @@ describe('CifraDeCesarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Deve criar o componente corretamente', () => {
     expect(component).toBeTruthy();
+  });
+
+  it(`Deve cifrar e decifrar o texto: '${TEXTO}' usando o deslocamento: '${DESLOCAMENTO}'`, () => {
+    let textoCifrado = metodos.cifrar(TEXTO, DESLOCAMENTO);
+    expect(TEXTO).not.toEqual(textoCifrado);
+    let textoDecifrado = metodos.decifrar(textoCifrado, DESLOCAMENTO);
+    expect(TEXTO).toEqual(textoDecifrado);
   });
 });

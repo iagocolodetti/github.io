@@ -1,6 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
 import { CifraMatematicaComponent } from './cifra-matematica.component';
+import { Metodos } from './Metodos';
+
+const metodos = new Metodos();
+
+const TEXTO = 'teste';
+const CHAVE = 'K24A52AB';
 
 describe('CifraMatematicaComponent', () => {
   let component: CifraMatematicaComponent;
@@ -8,7 +14,8 @@ describe('CifraMatematicaComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CifraMatematicaComponent ]
+      declarations: [ CifraMatematicaComponent ],
+      imports: [ FormsModule ]
     })
     .compileComponents();
   }));
@@ -19,7 +26,14 @@ describe('CifraMatematicaComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Deve criar o componente corretamente', () => {
     expect(component).toBeTruthy();
+  });
+
+  it(`Deve cifrar e decifrar o texto: '${TEXTO}' usando a chave: '${CHAVE}'`, () => {
+    let textoCifrado = metodos.cifrar(TEXTO, CHAVE);
+    expect(TEXTO).not.toEqual(textoCifrado);
+    let textoDecifrado = metodos.decifrar(textoCifrado, CHAVE);
+    expect(TEXTO).toEqual(textoDecifrado);
   });
 });

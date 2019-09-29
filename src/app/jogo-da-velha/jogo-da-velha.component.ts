@@ -15,7 +15,7 @@ export class JogoDaVelhaComponent {
   iniciado = false;
   jogadas = 0;
   vez = '--';
-  bts = [];
+  bts = new Array<Botao>(9);
   btsLength = 9;
   resultadoX = 0;
   resultadoV = 0;
@@ -35,6 +35,7 @@ export class JogoDaVelhaComponent {
 
   constructor(title: Title) {
     title.setTitle(this.title);
+    this.resetarBotoes();
   }
 
   iniciar() {
@@ -112,11 +113,8 @@ export class JogoDaVelhaComponent {
   }
 
   resetarBotoes() {
-    for (let i = 0; i < this.btsLength; i++) {
-      let bt = new Botao();
-      bt.texto = '-';
-      bt.cor = 'black';
-      this.bts[i] = bt;
+    for (let i = 0; i < this.bts.length; i++) {
+      this.bts[i] = {texto: '-', cor: 'black'};
     }
   }
 }

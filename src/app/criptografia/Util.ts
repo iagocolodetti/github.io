@@ -1,5 +1,4 @@
 export class Util {
-
     public isPositiveInteger(s: string): boolean {
         return (/^\+?\d+$/).test(s);
     }

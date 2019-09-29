@@ -1,5 +1,4 @@
 export class Metodos {
-
     private isPositiveInteger(s: string): boolean {
         return (/^\+?\d+$/).test(s);
     }
@@ -194,5 +193,4 @@ export class Metodos {
         }
         return resultado;
     }
-
 }

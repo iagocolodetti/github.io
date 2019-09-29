@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
 import { CifraRailFenceComponent } from './cifra-rail-fence.component';
+import { Metodos } from './Metodos';
+
+const metodos = new Metodos();
+
+const TEXTO = 'teste';
 
 describe('CifraRailFenceComponent', () => {
   let component: CifraRailFenceComponent;
@@ -8,7 +13,8 @@ describe('CifraRailFenceComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CifraRailFenceComponent ]
+      declarations: [ CifraRailFenceComponent ],
+      imports: [ FormsModule ]
     })
     .compileComponents();
   }));
@@ -19,7 +25,14 @@ describe('CifraRailFenceComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Deve criar o componente corretamente', () => {
     expect(component).toBeTruthy();
+  });
+
+  it(`Deve cifrar e decifrar o texto: '${TEXTO}'`, () => {
+    let textoCifrado = metodos.cifrar(TEXTO);
+    expect(TEXTO).not.toEqual(textoCifrado);
+    let textoDecifrado = metodos.decifrar(textoCifrado);
+    expect(TEXTO).toEqual(textoDecifrado);
   });
 });

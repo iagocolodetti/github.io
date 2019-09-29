@@ -19,7 +19,7 @@ describe('JogoDaVelhaComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Deve criar o componente corretamente', () => {
     expect(component).toBeTruthy();
   });
 });

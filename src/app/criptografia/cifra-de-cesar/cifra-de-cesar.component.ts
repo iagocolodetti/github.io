@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Util } from '../Util';
+import { Metodos } from './Metodos';
+
+const util = new Util();
+const metodos = new Metodos();
 
 @Component({
   selector: 'app-cifra-de-cesar',
@@ -8,8 +12,6 @@ import { Util } from '../Util';
   styleUrls: ['./cifra-de-cesar.component.css']
 })
 export class CifraDeCesarComponent {
-
-  util = new Util();
 
   title = 'Cifra de César';
 
@@ -23,9 +25,9 @@ export class CifraDeCesarComponent {
 
   cifrar() {
     if(this.texto.length > 0 && this.deslocamento.length > 0) {
-      if (this.util.isPositiveInteger(this.deslocamento)) {
+      if (util.isPositiveInteger(this.deslocamento)) {
         try {
-          this.resultado = this._cifrar(this.texto, parseInt(this.deslocamento), 12, 255);
+          this.resultado = metodos.cifrar(this.texto, parseInt(this.deslocamento));
         } catch (erro) {
           this.resultado = erro;
         }
@@ -37,9 +39,9 @@ export class CifraDeCesarComponent {
 
   decifrar() {
     if(this.texto.length > 0 && this.deslocamento.length > 0) {
-      if (this.util.isPositiveInteger(this.deslocamento)) {
+      if (util.isPositiveInteger(this.deslocamento)) {
         try {
-          this.resultado = this._decifrar(this.texto, parseInt(this.deslocamento), 12, 255);
+          this.resultado = metodos.decifrar(this.texto, parseInt(this.deslocamento));
         } catch (erro) {
           this.resultado = erro;
         }
@@ -48,54 +50,4 @@ export class CifraDeCesarComponent {
       }
     }
   }
-
-  private _cifrar(text: string, deslocamento: number, min: number, max: number): string {
-    let MAX_DESLOCAMENTO = ((max + 1) - min);
-    if (text == '') {
-      throw 'Digite algum(a) texto/palavra para ser cifrado(a).';
-    }
-    if (deslocamento < 0 || deslocamento > MAX_DESLOCAMENTO) {
-      throw 'O deslocamento não pode ser menor que 0 e não pode ser maior que ' + MAX_DESLOCAMENTO + '.';
-    }
-    let invalidchars = this.util.invalidCharsInString(text, min, max);
-    if (invalidchars != '') {
-      throw 'Existe(m) caractere(s) inválido(s) no(a) texto/palavra.\nCaracteres inválidos: ' + invalidchars;
-    }
-
-    let textCifrado = '';
-    for (let i = 0; i < text.length; i++) {
-      if ((text.charCodeAt(i) - deslocamento) < min) {
-        textCifrado += String.fromCharCode((max + 1) - (min - (text.charCodeAt(i) - deslocamento)));
-      } else {
-        textCifrado += String.fromCharCode(text.charCodeAt(i) - deslocamento);
-      }
-    }
-    return textCifrado;
-  }
-
-  private _decifrar(text: string, deslocamento: number, min: number, max: number): string {
-    let MAX_DESLOCAMENTO = ((max + 1) - min);
-    if (text == '') {
-      throw 'Digite algum(a) texto/palavra para ser decifrado(a).';
-    }
-    if (deslocamento < 0 || deslocamento > MAX_DESLOCAMENTO) {
-      throw 'O deslocamento não pode ser menor que 0 e não pode ser maior que ' + MAX_DESLOCAMENTO;
-    }
-    let invalidchars = this.util.invalidCharsInString(text, min, max);
-    if (invalidchars != '') {
-      throw 'Existe(m) caractere(s) inválido(s) no(a) texto/palavra.\nCaracteres inválidos: ' + invalidchars;
-    }
-
-    let textDecifrado = '';
-
-    for (let i = 0; i < text.length; i++) {
-      if ((text.charCodeAt(i) + deslocamento) > max) {
-        textDecifrado += String.fromCharCode((text.charCodeAt(i) + deslocamento) - MAX_DESLOCAMENTO);
-      } else {
-        textDecifrado += String.fromCharCode(text.charCodeAt(i) + deslocamento);
-      }
-    }
-    return textDecifrado;
-  }
-
 }
