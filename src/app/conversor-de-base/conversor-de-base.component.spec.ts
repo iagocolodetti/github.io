@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { ConversorDeBaseComponent } from './conversor-de-base.component';
 import { Metodos } from './Metodos';
@@ -14,7 +14,7 @@ describe('ConversorDeBaseComponent', () => {
   let component: ConversorDeBaseComponent;
   let fixture: ComponentFixture<ConversorDeBaseComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ConversorDeBaseComponent ],
       imports: [ FormsModule ]

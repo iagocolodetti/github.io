@@ -20,7 +20,7 @@ export class JogoDaVelhaComponent {
   resultadoX = 0;
   resultadoV = 0;
   resultadoO = 0;
-  vencedor = null;
+  vencedor: Vencedor = new Vencedor();
 
   possibilidades = [
     [0, 1, 2],
@@ -44,7 +44,6 @@ export class JogoDaVelhaComponent {
         this.jogadas = 0;
         this.vez = (Math.floor(Math.random() * 2) == 0 ? 'X' : 'O');
         this.resetarBotoes();
-        this.vencedor = new Vencedor();
     } else {
         alert('O jogo já está iniciado, termine esse primeiro.');
     }

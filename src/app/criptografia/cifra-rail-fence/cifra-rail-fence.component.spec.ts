@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { CifraRailFenceComponent } from './cifra-rail-fence.component';
 import { Metodos } from './Metodos';
@@ -11,7 +11,7 @@ describe('CifraRailFenceComponent', () => {
   let component: CifraRailFenceComponent;
   let fixture: ComponentFixture<CifraRailFenceComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CifraRailFenceComponent ],
       imports: [ FormsModule ]

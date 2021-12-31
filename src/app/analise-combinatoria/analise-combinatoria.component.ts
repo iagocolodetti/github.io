@@ -79,7 +79,7 @@ export class AnaliseCombinatoriaComponent {
   calcular() {
     try {
       this.resultado = new Metodos().analiseCombinatoria(this.tipoSelecionado, this.n, this.p);
-    } catch (erro) {
+    } catch (erro: any) {
       this.resultado = erro;
     }
   }

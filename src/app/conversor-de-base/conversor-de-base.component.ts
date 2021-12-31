@@ -14,8 +14,8 @@ export class ConversorDeBaseComponent {
   title = 'Conversor de Base';
 
   algarismo = '';
-  daBase: number;
-  paraBase: number;
+  daBase: number = 10;
+  paraBase: number = 2;
   resultado = '';
 
   constructor(title: Title) {
@@ -27,7 +27,7 @@ export class ConversorDeBaseComponent {
       if ((this.daBase >= 2 && this.daBase <= 32) && (this.paraBase >= 2 && this.paraBase <= 32)) {
         try {
           this.resultado = this.metodos.converterAlgarismo(this.algarismo, this.daBase, this.paraBase);
-        } catch (erro) {
+        } catch (erro: any) {
           this.resultado = erro;
         }
       } else {

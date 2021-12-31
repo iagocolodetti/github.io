@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { CifraDeCesarComponent } from './cifra-de-cesar.component';
 import { Metodos } from './Metodos';
@@ -12,7 +12,7 @@ describe('CifraDeCesarComponent', () => {
   let component: CifraDeCesarComponent;
   let fixture: ComponentFixture<CifraDeCesarComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CifraDeCesarComponent ],
       imports: [ FormsModule ]

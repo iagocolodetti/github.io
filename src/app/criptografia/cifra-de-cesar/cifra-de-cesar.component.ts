@@ -28,7 +28,7 @@ export class CifraDeCesarComponent {
       if (util.isPositiveInteger(this.deslocamento)) {
         try {
           this.resultado = metodos.cifrar(this.texto, parseInt(this.deslocamento));
-        } catch (erro) {
+        } catch (erro: any) {
           this.resultado = erro;
         }
       } else {
@@ -42,7 +42,7 @@ export class CifraDeCesarComponent {
       if (util.isPositiveInteger(this.deslocamento)) {
         try {
           this.resultado = metodos.decifrar(this.texto, parseInt(this.deslocamento));
-        } catch (erro) {
+        } catch (erro: any) {
           this.resultado = erro;
         }
       } else {

@@ -1,4 +1,4 @@
 export class Vencedor {
-    texto: string;
-    cor: string;
+    texto: string = "";
+    cor: string = "";
 }

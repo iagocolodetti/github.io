@@ -1,4 +1,4 @@
 export class Botao {
-    texto: string;
-    cor: string;
+    texto: string = "";
+    cor: string = "";
 }

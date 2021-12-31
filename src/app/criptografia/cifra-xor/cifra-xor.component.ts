@@ -25,7 +25,7 @@ export class CifraXorComponent {
     if(this.texto.length > 0 && this.chave.length > 0) {
       try {
         this.resultado = metodos.cifrar(this.texto, this.chave);
-      } catch (erro) {
+      } catch (erro: any) {
         this.resultado = erro;
       }
     }

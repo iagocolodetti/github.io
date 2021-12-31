@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { CifraXorComponent } from './cifra-xor.component';
 import { Metodos } from './Metodos';
@@ -12,7 +12,7 @@ describe('CifraXorComponent', () => {
   let component: CifraXorComponent;
   let fixture: ComponentFixture<CifraXorComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CifraXorComponent ],
       imports: [ FormsModule ]
